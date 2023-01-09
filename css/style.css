@@ -10,6 +10,7 @@ body {
 
 button {
     background-color: #ffffff;
+    border: 2px solid black;
 }
 button:hover {
     cursor: pointer;
