@@ -1,0 +1,26 @@
+#contents>div>h1 {
+    text-align: center;
+    /* background-color: darkgreen; */
+    margin-top: 10px;
+}
+
+#contents>div>img {
+    width: 350px;
+    height: 350px;
+    margin-left: 25px;
+    display: none;
+}
+
+#contents>#user {
+    width: 400px;
+    height: 400px;
+    /* background-color: chocolate; */
+    float: left;
+}
+
+#contents>#computer {
+    width: 400px;
+    height: 400px;
+    /* background-color: cornflowerblue; */
+    float: left;
+}

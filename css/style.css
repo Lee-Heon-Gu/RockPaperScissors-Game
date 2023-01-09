@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jua';
+}
+
+body {
+    background-color: aqua;
+}
+
+button {
+    background-color: #ffffff;
+}
+button:hover {
+    cursor: pointer;
+}
+
+#wrap {
+    width: 800px;
+    height: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 3px solid black;
+    border-radius: 5%;
+}
+
+#header {
+    width: 800px;
+    height: 150px;
+    /* background-color: brown; */
+    position: relative;
+}
+#header::after {
+    content: "";
+    display: block;
+    width: 780px;
+    border-bottom: 2px solid black;
+    position: absolute;
+    top: 150px;
+    left: 10px;
+}
+
+#contents {
+    width: 800px;
+    height: 400px;
+    /* background-color: blueviolet; */
+    position: relative;
+}
+#contents::after {
+    content: "";
+    display: block;
+    height: 380px;
+    border-left: 2px solid black;
+    position: absolute;
+    top: 10px;
+    left: 400px;
+}
+
+#footer {
+    width: 800px;
+    height: 150px;
+    /* background-color: blue; */
+    /* border-top: 2px solid black; */
+}

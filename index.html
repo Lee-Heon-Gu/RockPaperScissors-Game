@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/style.css" type="text/css" rel="stylesheet"/>
+    <link href="./css/header.css" type="text/css" rel="stylesheet"/>
+    <link href="./css/contents.css" type="text/css" rel="stylesheet"/>
+    <link href="./css/footer.css" type="text/css" rel="stylesheet"/>
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Jua:400');
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div id="score-bar">0 : 0 : 0</div>
+            <button id="reset-btn">
+                <i class="fa-solid fa-rotate-right fa-sm"></i>
+                <span>reset</span>
+            </button>
+        </header>
+        <div id="contents">
+            <div id="user">
+                <h1>You</h1>
+                <img src="./images/rock.png" alt="바위 이미지" class="user-img">
+                <img src="./images/paper.png" alt="보 이미지" class="user-img">
+                <img src="./images/scissors.png" alt="가위 이미지" class="user-img">
+            </div>
+            <div id="computer">
+                <h1>Computer</h1>
+                <img src="./images/rock.png" alt="바위 이미지" class="com-img">
+                <img src="./images/paper.png" alt="보 이미지" class="com-img">
+                <img src="./images/scissors.png" alt="가위 이미지" class="com-img">
+            </div>
+        </div>
+        <footer id="footer">
+            <button id="rock-btn" onclick="rps('바위')">
+                <img src="./images/rock.png" alt="rock">
+            </button>
+            <button id="scissors-btn" onclick="rps('보')">
+                <img src="./images/paper.png" alt="paper">
+            </button>
+            <button id="paper-btn" onclick="rps('가위')">
+                <img src="./images/scissors.png" alt="scissors">
+            </button>
+        </footer>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>
