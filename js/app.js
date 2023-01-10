@@ -2,7 +2,6 @@
 var userChoice = 0;
 var comChoice = 0;
 var recode = [0, 0, 0, 0]; // 승 무 패 기록
-var scoreFormat = recode[1]+" : "+recode[2]+" : "+recode[3];
 
 function rps(Choice) { // 가위, 바위, 보 게임 함수
     var userImg = document.getElementsByClassName("user-img");
@@ -120,7 +119,8 @@ function rpsResult() {
         }
     }
 
-    document.getElementById("score-bar").innerText = recode[1]+" : "+recode[2]+" : "+recode[3];
+    var scoreFormat = recode[1]+" : "+recode[2]+" : "+recode[3];
+    document.getElementById("score-bar").innerText = scoreFormat;
 }
 
 document.getElementById("reset-btn").addEventListener("click", rcpReset);
@@ -129,11 +129,33 @@ function rcpReset() {
     var userImg = document.getElementsByClassName("user-img");
     var comImg = document.getElementsByClassName("com-img");
     var score = document.getElementById("score-bar");
+
     for (var i = 0; i < userImg.length; i++)
     {
         userImg[i].style.display = "none";
         comImg[i].style.display = "none";
         recode[i + 1] = 0;
     }
+    
+    var scoreFormat = recode[1]+" : "+recode[2]+" : "+recode[3];
     score.innerText = scoreFormat;
+}
+
+document.getElementById("save").addEventListener("click", saveScore);
+function saveScore() {
+    alert("저장!");
+    // 배열을 JSON 문자열로 변환
+    var arrString = JSON.stringify(recode);
+    localStorage.setItem("score", arrString);
+    console.log(localStorage.getItem("score"));
+}
+
+document.getElementById("load").addEventListener("click", loadScore);
+function loadScore() {
+    alert("불러오기!");
+    recode = JSON.parse(localStorage.getItem("score"));
+    console.log(recode);
+
+    var scoreFormat = recode[1]+" : "+recode[2]+" : "+recode[3];
+    document.getElementById("score-bar").innerText = scoreFormat;   
 }

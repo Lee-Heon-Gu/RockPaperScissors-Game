@@ -1,4 +1,4 @@
-#footer>button {
+#footer>#rps-btn>button {
     width: 90px;
     height: 90px;
     border-radius: 100%;
@@ -7,14 +7,36 @@
     left: 260px;
 }
 
-#footer>button>img {
+#rps-btn>button>img {
     width: 70px;
     height: 70px;
     margin-top: 7px;
-    transition: 0.3s;
 }
 
-#footer>button:hover {
+#rps-btn>button:hover {
+    transform: scale(1.1);
+    border: none;
+    box-shadow: 0px 0px 2px 2px aqua;
+}
+
+#footer>#save-load {
+    float: right;
+}
+#save-load>button {
+    height: 30px;
+    position: relative;
+    right: 30px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+#save-load>#save {
+    width: 55px;
+}
+#save-load>#load {
+    width: 80px;
+}
+
+#save-load>button:hover {
     transform: scale(1.1);
     border: none;
     box-shadow: 0px 0px 2px 2px aqua;
