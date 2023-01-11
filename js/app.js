@@ -1,13 +1,17 @@
 // 가위, 바위, 보
-var userChoice = 0;
-var comChoice = 0;
-var recode = [0, 0, 0, 0]; // 승 무 패 기록
+let userChoice = 0;
+let comChoice = 0;
+let recode = [0, 0, 0, 0]; // 승 무 패 기록
+
+let resetBtn = document.getElementById('reset-btn');
+let saveBtn = document.getElementById('save-btn');
+let loadBtn = document.getElementById('load-btn');
 
 function rps(Choice) { // 가위, 바위, 보 게임 함수
-    var userImg = document.getElementsByClassName("user-img");
-    var comImg = document.getElementsByClassName("com-img");
+    let userImg = document.getElementsByClassName("user-img");
+    let comImg = document.getElementsByClassName("com-img");
     
-    for (var i = 0; i < userImg.length; i++)
+    for (let i = 0; i < userImg.length; i++)
     {
         userImg[i].style.display = "none";
         comImg[i].style.display = "none";
@@ -36,7 +40,7 @@ function rpsCom() {
     alert("컴퓨터 선택!");
     comChoice = Math.ceil(Math.random() * 3); // 1 ~ 3 랜덤 생성
                                               // 1 = 바위, 2 = 보, 3 = 가위
-    var comImg = document.getElementsByClassName("com-img");
+    let comImg = document.getElementsByClassName("com-img");
 
     if (comChoice == 1)
     {
@@ -119,16 +123,13 @@ function rpsResult() {
         }
     }
 
-    var scoreFormat = recode[1]+" : "+recode[2]+" : "+recode[3];
-    document.getElementById("score-bar").innerText = scoreFormat;
+    score();
 }
 
-document.getElementById("reset-btn").addEventListener("click", rcpReset);
-function rcpReset() {
+resetBtn.addEventListener("click", function () {
     alert("초기화!");
-    var userImg = document.getElementsByClassName("user-img");
-    var comImg = document.getElementsByClassName("com-img");
-    var score = document.getElementById("score-bar");
+    let userImg = document.getElementsByClassName("user-img");
+    let comImg = document.getElementsByClassName("com-img");
 
     for (var i = 0; i < userImg.length; i++)
     {
@@ -137,25 +138,27 @@ function rcpReset() {
         recode[i + 1] = 0;
     }
     
-    var scoreFormat = recode[1]+" : "+recode[2]+" : "+recode[3];
-    score.innerText = scoreFormat;
-}
+    score();
+});
 
-document.getElementById("save").addEventListener("click", saveScore);
-function saveScore() {
+saveBtn.addEventListener("click", function () {
     alert("저장!");
     // 배열을 JSON 문자열로 변환
-    var arrString = JSON.stringify(recode);
+    let arrString = JSON.stringify(recode);
     localStorage.setItem("score", arrString);
     console.log(localStorage.getItem("score"));
-}
+});
 
-document.getElementById("load").addEventListener("click", loadScore);
-function loadScore() {
+loadBtn.addEventListener("click", function () {
     alert("불러오기!");
     recode = JSON.parse(localStorage.getItem("score"));
     console.log(recode);
 
-    var scoreFormat = recode[1]+" : "+recode[2]+" : "+recode[3];
-    document.getElementById("score-bar").innerText = scoreFormat;   
+    score();   
+});
+
+function score() {
+    let scoreFormat = recode[1]+" : "+recode[2]+" : "+recode[3];
+    let scoreBar = document.getElementById('score-bar');
+    scoreBar.textContent = scoreFormat;
 }

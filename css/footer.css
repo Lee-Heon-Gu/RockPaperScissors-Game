@@ -29,10 +29,10 @@
     font-size: 18px;
     border-radius: 5px;
 }
-#save-load>#save {
+#save-load>#save-btn {
     width: 55px;
 }
-#save-load>#load {
+#save-load>#load-btn {
     width: 80px;
 }
 
